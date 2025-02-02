@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-const authMiddleware = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   // Check if authorization header is provided and follows "Bearer <token>" format
@@ -15,15 +15,20 @@ const authMiddleware = (req, res, next) => {
   try {
     // Verify the token and retrieve decoded payload
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.userId = decoded.userId; // Set the userId for future request handling
+    // console.log("decoded", decoded)
+    if(decoded.userId){
+      req.userId = decoded.userId;
+    }else{
+      req.userId = decoded._id;
+    }
+    // console.log("userId", req.userId);
 
     next(); // Call next() to proceed to the next middleware or route handler
   } catch (err) {
     // If token verification fails, return a 403 error
+    // console.log(authHeader)
     return res.status(403).json({ message: "Invalid token", error: err.message }); // Added better error message
   }
 };
 
-module.exports = {
-  authMiddleware,
-};
+export default verifyToken;

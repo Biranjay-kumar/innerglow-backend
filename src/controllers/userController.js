@@ -1,9 +1,11 @@
 import User from "../models/userModel.js";
 import UserService from "../services/userService.js";
+import jwt from "jsonwebtoken";
 
 class UserController {
   async register(req, res, next) {
-    const { name, email, password, dob, batch } = req.body;
+    const { name, email, password, dob } = req.body;
+    console.log(dob);
 
     // Validate DOB format
     const dobParts = dob.split("/"); // Assuming the format is d/m/y
@@ -40,7 +42,6 @@ class UserController {
         email,
         password,
         dob: birthDate,
-        batch,
       });
       // const alreadyRegistered = await UserService.getUserByEmail(email);
 
@@ -62,17 +63,28 @@ class UserController {
       // Call getUserByEmail and pass the email and password for validation
       const user = await UserService.getUserByEmail(email, password);
 
-      // Token generation logic (assuming JWT)
-      const token = user.generateAuthToken();
-      res
-        .status(200)
-        .json({
-          success: true,
-          message: "Login successful",
-          data: user,
-          token,
+      if (!user) {
+        return res.status(401).json({
+          success: false,
+          message: "Invalid email or password",
         });
+      }
+
+      // Token generation logic (assuming JWT)
+      const token = jwt.sign(
+        { userId: user._id, email: user.email },
+        process.env.JWT_SECRET, // Ensure this is set in your environment variables
+        { expiresIn: "7d" } // Token expiration
+      );
+
+      return res.status(200).json({
+        success: true,
+        message: "Login successful",
+        data: user,
+        token,
+      });
     } catch (error) {
+      console.error("Login Error:", error);
       next(error); // Pass error to the global error handler
     }
   }

@@ -30,7 +30,6 @@ const userSchema = new Schema({
   batch: {
     type: Schema.Types.ObjectId,
     ref: "Batch",
-    required: [true, "Batch is required"],
   },
   paymentStatus: {
     type: String,

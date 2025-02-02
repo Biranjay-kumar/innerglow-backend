@@ -4,7 +4,8 @@ class PaymentController {
   // Create a new payment for a user
   async createPayment(req, res, next) {
     try {
-      const  userId  = req.params;  
+      const   userId   = req.userId;  
+      // console.log(userId);
       const paymentData = req.body;
 
       // Create the payment
