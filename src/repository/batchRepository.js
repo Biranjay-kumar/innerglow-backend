@@ -53,56 +53,61 @@ class BatchRepository {
   async enrollInBatch(batchId, studentId) {
     const session = await mongoose.startSession();
     session.startTransaction();
-
+  
     try {
+      const currentMonth = new Date().getMonth(); // Get current month (0-indexed)
+      
       let batch = await Batch.findById(batchId).session(session);
       let student = await User.findById(studentId).session(session);
-
+  
       if (!student) {
         throw new Error("Student not found");
       }
-
+  
       if (!batch) {
         throw new Error("Batch not found");
       }
-
-      // Check if the student is already in the current batch
-      if (batch.users.some((id) => id.toString() === studentId)) {
-        throw new Error("Student is already enrolled in this batch");
+  
+      // If student is already enrolled and it's the same month, don't allow changing batches
+      if (student.enrollmentMonth === currentMonth) {
+        // Check if the student is already enrolled in the current batch
+        if (batch.users.some((id) => id.toString() === studentId)) {
+          throw new Error("Student is already enrolled in this batch for the current month");
+        } else {
+          throw new Error("Student cannot switch batches within the same month");
+        }
       }
-
-      // If the student is already in another batch, remove them from that batch
-      if (student.batch) {
-        let previousBatch = await Batch.findById(student.batch).session(
-          session
-        );
+  
+      // If student is enrolled in a previous month's batch, remove them from that batch
+      if (student.batch && student.enrollmentMonth !== currentMonth) {
+        let previousBatch = await Batch.findById(student.batch).session(session);
         if (previousBatch) {
-          console.log("minus previous batch", previousBatch)
           // Remove the student from the previous batch and update availableSlots
           previousBatch.users = previousBatch.users.filter(
             (id) => id.toString() !== studentId
           );
-          previousBatch.availableSlots += 1; // Add slot back to the previous batch
+          previousBatch.availableSlots += 1;  // Add slot back to the previous batch
           await previousBatch.save({ session });
         }
       }
-
-      // Check if there are available slots in the new batch
+  
+      // Check if there are available slots in the selected batch
       if (batch.availableSlots > 0) {
         // Add student to the new batch and update availableSlots
         batch.users.push(studentId);
-        batch.availableSlots -= 1; // Decrease slot in the current batch
+        batch.availableSlots -= 1;  // Decrease slot in the current batch
         student.batch = batch._id;
+        student.enrollmentMonth = currentMonth; // Mark the enrollment month
       } else {
         throw new Error("No available slots in the selected batch");
       }
-
+  
       await student.save({ session });
       await batch.save({ session });
-
+  
       await session.commitTransaction();
       session.endSession();
-
+  
       return batch;
     } catch (error) {
       await session.abortTransaction();
@@ -110,6 +115,7 @@ class BatchRepository {
       throw new Error("Error enrolling in batch: " + error.message);
     }
   }
+  
 
   async mybatch(userId) {
     try {

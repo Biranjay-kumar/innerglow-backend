@@ -55,6 +55,11 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
+  enrollmentMonth: {
+    type: Number,  
+    required: true
+  }
+  
 });
 
 // Virtual field to calculate age
