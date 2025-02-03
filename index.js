@@ -14,7 +14,7 @@ const app = express();
 
 // Use CORS middleware
 app.use(cors({
-  origin: ["http://localhost:5173", "https://your-production-site.com"], // Allow multiple origins
+  origin: ["http://localhost:5173", "https://innerglow.netlify.app/"], // Allow multiple origins
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true, // Allow cookies if needed
