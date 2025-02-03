@@ -9,5 +9,6 @@ userRouter.post("/", UserController.register);
 userRouter.post("/login", UserController.login);
 userRouter.put("/:userId", verifyToken, UserController.updateUser);
 userRouter.delete("/:userId", verifyToken, UserController.deleteUser);
+userRouter.patch("/verify-otp", UserController.verifyUser);
 
 export default userRouter;

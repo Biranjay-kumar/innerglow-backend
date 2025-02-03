@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 const { Schema } = mongoose;
 
@@ -46,6 +46,10 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  otp: {
+    type: String,
+    default: "",
+  },
 });
 
 // Virtual field to calculate age
@@ -78,16 +82,22 @@ userSchema.pre("save", function (next) {
 userSchema.post("save", function (error, doc, next) {
   if (error.name === "MongoServerError" && error.code === 11000) {
     const duplicateField = Object.keys(error.keyValue)[0];
-    return next(new Error(`${duplicateField.charAt(0).toUpperCase() + duplicateField.slice(1)} is already registered.`));
+    return next(
+      new Error(
+        `${
+          duplicateField.charAt(0).toUpperCase() + duplicateField.slice(1)
+        } is already registered.`
+      )
+    );
   }
   next(error);
 });
 
-userSchema.methods.generateAuthToken = function() {
+userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
-    { _id: this._id, email: this.email },  // Payload: user ID and email
-    process.env.JWT_SECRET,                // Secret key from environment variable
-    { expiresIn: '1h' }                   // Token expiry time (1 hour)
+    { _id: this._id, email: this.email }, // Payload: user ID and email
+    process.env.JWT_SECRET, // Secret key from environment variable
+    { expiresIn: "1h" } // Token expiry time (1 hour)
   );
   return token;
 };

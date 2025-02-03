@@ -41,6 +41,8 @@ class PaymentRepository {
       throw new Error("Error finding payments: " + error.message);
     }
   }
+
+  
 }
 
 export default new PaymentRepository();

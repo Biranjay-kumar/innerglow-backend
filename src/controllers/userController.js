@@ -1,6 +1,8 @@
 import User from "../models/userModel.js";
 import UserService from "../services/userService.js";
 import jwt from "jsonwebtoken";
+import { verifyOtp } from "../utility/otpAgencyUtility.js";
+import userService from "../services/userService.js";
 
 class UserController {
   async register(req, res, next) {
@@ -70,16 +72,15 @@ class UserController {
         });
       }
       console.log("user : ", user);
-      const JWT_SECRET  = process.env.JWT_SECRET
+      const JWT_SECRET = process.env.JWT_SECRET;
       // Token generation logic (assuming JWT)
       const token = jwt.sign(
         {
-          userId: user.data._id, 
+          userId: user.data._id,
         },
         JWT_SECRET, // Use environment variable for secret in production
         { expiresIn: "1h" } // Token expiration time (1 hour)
       );
-      
 
       return res.status(200).json({
         success: true,
@@ -121,6 +122,19 @@ class UserController {
       });
     } catch (error) {
       next(error); // Pass error to the global error handler
+    }
+  }
+
+  async verifyUser(req, res, next) {
+    const { email, otp } = req.body;
+    try {
+      const verifyUser = await userService.verifyUser(email, otp);
+      return res.status(200).json({
+        success: true,
+        message: "User verified successfully",
+      });
+    } catch (error) {
+      next(error);
     }
   }
 }

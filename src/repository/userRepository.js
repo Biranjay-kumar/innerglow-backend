@@ -57,6 +57,18 @@ class UserRepository {
       throw new Error("Error finding user by email: " + error.message);
     }
   }
+
+  async verifyUser(email, otp){
+    try {
+      const user = await User.findOne({ email, otp });
+      if(!user){
+        return false;
+      }
+      return true;
+    } catch (error) {
+      throw new Error("Error verifiying otp: " + error.message);
+    }
+  }
 }
 
 export default new UserRepository();

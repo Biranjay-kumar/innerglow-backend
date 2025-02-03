@@ -1,5 +1,7 @@
 import paymentRepository from "../repository/paymentRepository.js";
 import userRepository from "../repository/userRepository.js";
+import { generateAndSaveOtp } from "../utility/otpAgencyUtility.js";
+import { sendEmail } from "../utility/sendEmailVerification.js";
 import { hashPassword, comparePassword } from "../utils/hashUtils.js"; // Assuming comparePassword function exists
 
 class UserService {
@@ -10,6 +12,10 @@ class UserService {
 
       // Attempt to create the user
       const user = await userRepository.createUser(data);
+
+      // Prepare OTP and send it via email
+      await generateAndSaveOtp(user, "register"); // Now awaiting OTP generation
+
       return { success: true, data: user };
     } catch (error) {
       // Check if the error is related to a duplicate email
@@ -94,6 +100,18 @@ class UserService {
       return payments;
     } catch (error) {
       throw new Error("Error retrieving payments for user: " + error.message);
+    }
+  }
+
+  async verifyUser(email, otp){
+    try {
+      const user = await userRepository.verifyUser(email, otp);
+      if(!user){
+        throw new Error('Invalid OTP');
+      }
+      return user;
+    } catch (error) {
+      throw new Error("Error verifying user: " + error.message);
     }
   }
 }
