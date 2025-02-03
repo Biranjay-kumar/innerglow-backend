@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
+import { string } from "zod";
 
 const { Schema } = mongoose;
 
@@ -24,7 +25,7 @@ const userSchema = new Schema({
     minlength: [6, "Password must be at least 6 characters long"],
   },
   dob: {
-    type: Date,
+    type: String,
     required: [true, "Date of birth is required"],
   },
   isVerified: {
