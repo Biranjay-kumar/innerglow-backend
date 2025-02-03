@@ -5,6 +5,8 @@ Click the link below to view the full API documentation:
 
 🔗 [API Docs](https://innerglow-backend.onrender.com/api-docs/)
 
+📄 You can download the Database design file [here](./databaseDesign.jpg).
+
 ## **Description**
 InnerGlow backend is a scalable and robust backend system built using **Node.js** and **Express.js**. It handles user authentication, data management, email handling, and provides API documentation through Swagger UI. The API is built to serve the requirements of the **InnerGlow** platform and is optimized for scalability and performance.
 
