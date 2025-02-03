@@ -1,5 +1,10 @@
 # **Backend API - InnerGlow**
 
+## API Documentation 📄  
+Click the link below to view the full API documentation:  
+
+🔗 [API Docs](https://innerglow-backend.onrender.com/api-docs/)
+
 ## **Description**
 InnerGlow backend is a scalable and robust backend system built using **Node.js** and **Express.js**. It handles user authentication, data management, email handling, and provides API documentation through Swagger UI. The API is built to serve the requirements of the **InnerGlow** platform and is optimized for scalability and performance.
 
@@ -7,6 +12,7 @@ InnerGlow backend is a scalable and robust backend system built using **Node.js*
 
 ## **Features**
 - **User Authentication**: Secure user login and registration using JWT and bcrypt.
+- **Transactions**: Used to achieve atomicity and consistency in database operations.
 - **Email Integration**: Integration with Nodemailer for sending emails.
 - **Rate Limiting**: Protect API endpoints from abuse using express-rate-limit.
 - **Swagger API Documentation**: Automated and easy-to-use API docs with Swagger UI.
