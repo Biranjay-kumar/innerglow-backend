@@ -13,12 +13,23 @@ dotenv.config();
 const app = express();
 
 // Use CORS middleware
-app.use(cors({
-  origin: ["http://localhost:5173", "https://innerglow.netlify.app/"], // Allow multiple origins
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = ["http://localhost:5173", "https://innerglow.netlify.app"];
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // Allow cookies if needed
-}));
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
