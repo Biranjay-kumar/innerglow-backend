@@ -5,6 +5,6 @@ import verifyToken from "../middlewares/verifyToken.js";
 const paymentRouter = express.Router();
 
 paymentRouter.post("/", verifyToken, paymentController.createPayment); 
-paymentRouter.get("/", paymentController.getPaymentsByUser); 
+paymentRouter.get("/", verifyToken, paymentController.getPaymentsByUser); 
 
 export default paymentRouter;

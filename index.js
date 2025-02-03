@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./src/config/database.js";
 import router from "./src/routes/index.js";
 import  errorHandler  from "./src/utils/errorHandler.js";
+import "./src/cron/cronJobs.js"; // Import the cron job
 
 // Initialize dotenv
 dotenv.config();

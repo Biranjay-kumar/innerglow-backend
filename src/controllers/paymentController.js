@@ -4,13 +4,13 @@ class PaymentController {
   // Create a new payment for a user
   async createPayment(req, res, next) {
     try {
-      const   userId   = req.userId;  
+      const userId = req.userId;
       // console.log(userId);
       const paymentData = req.body;
 
       // Create the payment
       const payment = await UserService.createPayment(userId, paymentData);
-      
+
       return res.status(201).json({
         success: true,
         message: "Payment created successfully",
@@ -26,7 +26,7 @@ class PaymentController {
     try {
       const { userId } = req.params; // Get userId from route parameter
       const payments = await UserService.getUserPayments(userId);
-      
+
       if (!payments || payments.length === 0) {
         return res.status(404).json({
           success: false,

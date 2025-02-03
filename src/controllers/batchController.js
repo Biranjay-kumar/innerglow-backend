@@ -1,3 +1,4 @@
+import batchService from "../services/batchService.js";
 import BatchService from "../services/batchService.js";
 
 class BatchController {
@@ -10,21 +11,22 @@ class BatchController {
       return res.status(201).json({
         success: true,
         message: "Batch created successfully",
-        data: newBatch
+        data: newBatch,
       });
     } catch (error) {
-      next(error);  // Pass error to the global error handler
+      next(error); // Pass error to the global error handler
     }
   }
 
   // Get all batches
-  async getAll(req, res, next) {
+  async getBatch(req, res, next) {
     try {
+      const userId = req.userId;
       const batches = await BatchService.getAllBatches();
       return res.status(200).json({
         success: true,
         message: "Batches retrieved successfully",
-        data: batches
+        data: batches,
       });
     } catch (error) {
       next(error);
@@ -43,7 +45,7 @@ class BatchController {
       return res.status(200).json({
         success: true,
         message: "Batch retrieved successfully",
-        data: batch
+        data: batch,
       });
     } catch (error) {
       next(error);
@@ -51,7 +53,7 @@ class BatchController {
   }
 
   // Update a batch
-  async update(req, res, next) {
+  async updateBatch(req, res, next) {
     const { batchId } = req.params;
     const data = req.body;
 
@@ -63,7 +65,7 @@ class BatchController {
       return res.status(200).json({
         success: true,
         message: "Batch updated successfully",
-        data: updatedBatch
+        data: updatedBatch,
       });
     } catch (error) {
       next(error);
@@ -71,7 +73,7 @@ class BatchController {
   }
 
   // Delete a batch
-  async delete(req, res, next) {
+  async deleteBatch(req, res, next) {
     const { batchId } = req.params;
 
     try {
@@ -80,6 +82,50 @@ class BatchController {
         return res.status(404).json({ error: "Batch not found" });
       }
       return res.status(200).json({ message: "Batch deleted successfully" });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  // enroll in a batch
+  async enrollInBatch(req, res, next) {
+    const batchId = req.params.batchId;
+    const studentId = req.userId;
+
+    try {
+      const enrolledBatch = await BatchService.enrollInBatch(
+        batchId,
+        studentId
+      );
+      if (!enrolledBatch) {
+        return res.status(404).json({ error: "Batch not found" });
+      }
+      return res.status(200).json({
+        success: true,
+        message: "Enrollment successful",
+        data: enrolledBatch,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async mybatch(req, res, next) {
+    const userId = req.userId;
+    console.log(userId)
+    try {
+      const mybatch = await batchService.mybatch(userId);
+      if (!mybatch) {
+        return res.status(404).json({
+          success: false,
+          message: "pelase enroll in a batch",
+        });
+      }
+      return res.status(200).json({
+        success: true,
+        message: "Batch retrieved successfully",
+        data: mybatch,
+      });
     } catch (error) {
       next(error);
     }

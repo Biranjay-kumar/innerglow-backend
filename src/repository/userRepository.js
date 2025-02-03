@@ -20,7 +20,7 @@ class UserRepository {
 
   async findUserByEmail(email) {
     try {
-      return await User.findOne({ email });
+      return await User.findOne({ email }).exec();
     } catch (error) {
       throw new Error("Error finding user by email: " + error.message);
     }

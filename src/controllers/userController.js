@@ -61,7 +61,7 @@ class UserController {
 
     try {
       // Call getUserByEmail and pass the email and password for validation
-      const user = await UserService.getUserByEmail(email, password);
+      const user = await UserService.loginUser(email, password);
 
       if (!user) {
         return res.status(401).json({
@@ -69,13 +69,17 @@ class UserController {
           message: "Invalid email or password",
         });
       }
-
+      console.log("user : ", user);
+      const JWT_SECRET  = process.env.JWT_SECRET
       // Token generation logic (assuming JWT)
       const token = jwt.sign(
-        { userId: user._id, email: user.email },
-        process.env.JWT_SECRET, // Ensure this is set in your environment variables
-        { expiresIn: "7d" } // Token expiration
+        {
+          userId: user.data._id, 
+        },
+        JWT_SECRET, // Use environment variable for secret in production
+        { expiresIn: "1h" } // Token expiration time (1 hour)
       );
+      
 
       return res.status(200).json({
         success: true,
