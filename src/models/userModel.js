@@ -57,7 +57,7 @@ const userSchema = new Schema({
   },
   enrollmentMonth: {
     type: Number,  
-    required: true
+    default: 0,
   }
   
 });

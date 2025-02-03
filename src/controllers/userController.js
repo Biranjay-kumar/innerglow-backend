@@ -45,7 +45,7 @@ class UserController {
         password,
         dob: birthDate,
       });
-      // const alreadyRegistered = await UserService.getUserByEmail(email);
+      
 
       return res.status(201).json({
         success: true,
@@ -78,8 +78,8 @@ class UserController {
         {
           userId: user.data._id,
         },
-        JWT_SECRET, // Use environment variable for secret in production
-        { expiresIn: "1h" } // Token expiration time (1 hour)
+        JWT_SECRET, 
+        { expiresIn: "1h" } 
       );
 
       return res.status(200).json({
@@ -90,7 +90,7 @@ class UserController {
       });
     } catch (error) {
       console.error("Login Error:", error);
-      next(error); // Pass error to the global error handler
+      next(error); 
     }
   }
 
@@ -106,7 +106,7 @@ class UserController {
         data: updatedUser,
       });
     } catch (error) {
-      next(error); // Pass error to the global error handler
+      next(error); 
     }
   }
 
@@ -121,7 +121,7 @@ class UserController {
         data: deletedUser,
       });
     } catch (error) {
-      next(error); // Pass error to the global error handler
+      next(error); 
     }
   }
 
