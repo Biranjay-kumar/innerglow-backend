@@ -85,6 +85,6 @@ app.use("*", (req, res) => {
 });
 
 // Start the server
-app.listen(4000, () => {
-  console.log("Backend server running on port 4000");
+app.listen(5000, () => {
+  console.log("Backend server running on port 5000");
 });
