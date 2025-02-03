@@ -91,6 +91,7 @@ class BatchController {
   async enrollInBatch(req, res, next) {
     const batchId = req.params.batchId;
     const studentId = req.userId;
+    // console.log("code came in controller 94")
 
     try {
       const enrolledBatch = await BatchService.enrollInBatch(

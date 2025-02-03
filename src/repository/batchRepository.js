@@ -51,8 +51,6 @@ class BatchRepository {
 
   // enrollInBatch
   async enrollInBatch(batchId, studentId) {
-    console.log("batchId", batchId);
-    console.log("studentId", studentId);
     const session = await mongoose.startSession();
     session.startTransaction();
 
@@ -73,22 +71,27 @@ class BatchRepository {
         throw new Error("Student is already enrolled in this batch");
       }
 
-      // If the student is already in another batch, remove them from that batch without slot adjustments
+      // If the student is already in another batch, remove them from that batch
       if (student.batch) {
         let previousBatch = await Batch.findById(student.batch).session(
           session
         );
         if (previousBatch) {
+          console.log("minus previous batch", previousBatch)
+          // Remove the student from the previous batch and update availableSlots
           previousBatch.users = previousBatch.users.filter(
             (id) => id.toString() !== studentId
           );
+          previousBatch.availableSlots += 1; // Add slot back to the previous batch
           await previousBatch.save({ session });
         }
       }
 
-      // Add student to the new batch only if there's an available slot
+      // Check if there are available slots in the new batch
       if (batch.availableSlots > 0) {
+        // Add student to the new batch and update availableSlots
         batch.users.push(studentId);
+        batch.availableSlots -= 1; // Decrease slot in the current batch
         student.batch = batch._id;
       } else {
         throw new Error("No available slots in the selected batch");
