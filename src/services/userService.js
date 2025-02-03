@@ -36,6 +36,10 @@ class UserService {
         throw new Error("Email not found.");
       }
 
+      if(!user.isVerified) {
+        throw new Error("Email not verified.");
+      }
+
       // Compare the entered password with the stored hash
       const isPasswordValid = await comparePassword(password, user.password);
       if (!isPasswordValid) {

@@ -27,6 +27,10 @@ const userSchema = new Schema({
     type: Date,
     required: [true, "Date of birth is required"],
   },
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
   batch: {
     type: Schema.Types.ObjectId,
     ref: "Batch",

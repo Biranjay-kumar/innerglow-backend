@@ -58,13 +58,15 @@ class UserRepository {
     }
   }
 
-  async verifyUser(email, otp){
+  async verifyUser(email, otp) {
     try {
       const user = await User.findOne({ email, otp });
-      if(!user){
+
+      if (!user) {
         return false;
       }
-      return true;
+      user.isVerified = true;
+      return await user.save();
     } catch (error) {
       throw new Error("Error verifiying otp: " + error.message);
     }
