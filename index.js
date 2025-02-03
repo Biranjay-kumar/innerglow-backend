@@ -6,6 +6,13 @@ import router from "./src/routes/index.js";
 import  errorHandler  from "./src/utils/errorHandler.js";
 import "./src/cron/cronJobs.js"; // Import the cron job
 import rateLimit from "express-rate-limit";
+import swaggerUi from 'swagger-ui-express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Initialize dotenv
 dotenv.config();
@@ -30,6 +37,17 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
+const openapiPath = path.join(__dirname, 'openapi.json');
+let openapiData;
+try {
+  openapiData = JSON.parse(fs.readFileSync(openapiPath, 'utf8'));
+} catch (err) {
+  console.error('Error reading OpenAPI file:', err.message);
+  process.exit(1);
+}
+
+// Set up Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiData));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -67,6 +85,6 @@ app.use("*", (req, res) => {
 });
 
 // Start the server
-app.listen(5000, () => {
-  console.log("Backend server running on port 5000");
+app.listen(4000, () => {
+  console.log("Backend server running on port 4000");
 });

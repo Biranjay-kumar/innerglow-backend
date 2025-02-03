@@ -8,7 +8,7 @@ class UserController {
   async register(req, res, next) {
     const { name, email, password, dob } = req.body;
     console.log(dob);
-
+    const enrollmentMonth = 0;
     // Validate DOB format
     const dobParts = dob.split("/"); // Assuming the format is d/m/y
     if (dobParts.length !== 3) {
@@ -44,6 +44,7 @@ class UserController {
         email,
         password,
         dob: birthDate,
+        enrollmentMonth,
       });
       
 
@@ -95,7 +96,7 @@ class UserController {
   }
 
   async updateUser(req, res, next) {
-    const { userId } = req.params;
+    const userId  = req.userId;
     const data = req.body;
 
     try {

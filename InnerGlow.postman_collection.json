@@ -1,0 +1,2035 @@
+{
+	"info": {
+		"_postman_id": "6c2f37df-313a-401a-bd2d-a4aaa4b6e65a",
+		"name": "InnerGlow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40839302"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Verified-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"otp\":\"192487\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/user/verify-otp",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"verify-otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"otp\":\"192487\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/user/verify-otp",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"verify-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "720"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-qnY/LUOjBteYYtNyim+IK+DkqMw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:08:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User verified successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Biranjay Kumar Gupta\",\r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"dob\": \"07/08/2002\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Biranjay Kumar Gupta\",\r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"dob\": \"07/08/2002\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/user/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "479"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1df-w1wIGY4meYfW/zcsby+CuDCbDNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:05:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to our platform\",\n    \"data\": {\n        \"success\": true,\n        \"data\": {\n            \"name\": \"Biranjay Kumar Gupta\",\n            \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\n            \"password\": \"$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6\",\n            \"dob\": \"Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)\",\n            \"isVerified\": false,\n            \"paymentStatus\": \"Pending\",\n            \"paymentHistory\": [],\n            \"otp\": \"192487\",\n            \"enrollmentMonth\": 0,\n            \"_id\": \"67a1137b677a44090a4bc5eb\",\n            \"dateJoined\": \"2025-02-03T19:05:31.046Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "95"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "659"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "658"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"292-gXrtaqjI5EZb+o09RIJRGB+CRRo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:09:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"success\": true,\n        \"data\": {\n            \"_id\": \"67a1137b677a44090a4bc5eb\",\n            \"name\": \"Biranjay Kumar Gupta\",\n            \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\n            \"password\": \"$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6\",\n            \"dob\": \"Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)\",\n            \"isVerified\": true,\n            \"paymentStatus\": \"Pending\",\n            \"paymentHistory\": [],\n            \"otp\": \"192487\",\n            \"enrollmentMonth\": 0,\n            \"dateJoined\": \"2025-02-03T19:05:31.046Z\",\n            \"__v\": 0\n        }\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"name\": \"Biranjay\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"name\": \"Biranjay\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/user/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "876"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "476"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dc-aNZLB+wyYjnU5xvhEnHrY0R/+zk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:45:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"_id\": \"67a1137b677a44090a4bc5eb\",\n        \"name\": \"Biranjay\",\n        \"email\": \"biranjay.21ug1037@iiitranchi.ac.in\",\n        \"password\": \"$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6\",\n        \"dob\": \"Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)\",\n        \"isVerified\": true,\n        \"paymentStatus\": \"Paid\",\n        \"paymentHistory\": [],\n        \"otp\": \"192487\",\n        \"enrollmentMonth\": 1,\n        \"dateJoined\": \"2025-02-03T19:05:31.046Z\",\n        \"__v\": 0,\n        \"batch\": \"67a11658677a44090a4bc5f3\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/user/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-Orl5v+hQ8Gj+F6mZBO1mO9s+1jg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:47:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "Create Batch",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"6-7AM\",\r\n    \"availableSlots\": 30,\r\n    \"users\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/batch/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success:true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"6-7AM\",\r\n    \"availableSlots\": 30,\r\n    \"users\": []\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/batch/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"batch",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "94"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "166"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"97-ifXPo8Z0AtLfPMMDd93C8lQsroo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:17:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Batch created successfully\",\n    \"data\": {\n        \"name\": \"6-7AM\",\n        \"availableSlots\": 30,\n        \"users\": [],\n        \"_id\": \"67a11658677a44090a4bc5f3\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all batches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/batch/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/batch/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"batch",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "90"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "67"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "423"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a7-WXINa7bpNDthL1YH8NW+XwLmVQQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:19:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Batches retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"67a11658677a44090a4bc5f3\",\n            \"name\": \"6-7AM\",\n            \"availableSlots\": 30,\n            \"users\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67a11694677a44090a4bc5f5\",\n            \"name\": \"7-8AM\",\n            \"availableSlots\": 30,\n            \"users\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67a1169f677a44090a4bc5f7\",\n            \"name\": \"8-9AM\",\n            \"availableSlots\": 12,\n            \"users\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67a116a7677a44090a4bc5f9\",\n            \"name\": \"5-6PM\",\n            \"availableSlots\": 4,\n            \"users\": [],\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update batch",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/batch/67a11658677a44090a4bc5f3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"batch",
+								"67a11658677a44090a4bc5f3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success true",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/batch/67a11658677a44090a4bc5f3",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"batch",
+										"67a11658677a44090a4bc5f3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"97-7C6RcqmMh1u6tpRV/1oM6wi+o9M\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:21:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Batch updated successfully\",\n    \"data\": {\n        \"_id\": \"67a11658677a44090a4bc5f3\",\n        \"name\": \"6-7AM\",\n        \"availableSlots\": 30,\n        \"users\": [],\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Enroll in a batch",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/batch/67a11658677a44090a4bc5f3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"batch",
+								"67a11658677a44090a4bc5f3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/batch/67a11658677a44090a4bc5f3",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"batch",
+										"67a11658677a44090a4bc5f3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "864"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-JCjAGgURShw+VqVXPzIgEjqUX5M\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:22:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Enrollment successful\",\n    \"data\": {\n        \"_id\": \"67a11658677a44090a4bc5f3\",\n        \"name\": \"6-7AM\",\n        \"availableSlots\": 29,\n        \"users\": [\n            \"67a1137b677a44090a4bc5eb\"\n        ],\n        \"__v\": 1\n    }\n}"
+						},
+						{
+							"name": "Success: fail",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/batch/67a11658677a44090a4bc5f3",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"batch",
+										"67a11658677a44090a4bc5f3"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "801"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-eirWW14/73P7RBOUHf4Pv9KEYXQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:23:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Student is already enrolled in this batch for the current month\",\n    \"error\": \"Service Error: Error enrolling in batch: Student is already enrolled in this batch for the current month\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Coupon",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discountPercentage\": 20,\r\n    \"validUntil\": \"2025-12-31T23:59:59.999Z\",\r\n    \"status\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/coupon/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"coupon",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"discountPercentage\": 20,\r\n    \"validUntil\": \"2025-12-31T23:59:59.999Z\",\r\n    \"status\": \"Active\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/coupon/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"coupon",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "866"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-pVShbxjFZ6+puR/FRUtwLPUBvag\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:29:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Coupon created successfully\",\n    \"data\": {\n        \"code\": \"YL7BNW8Y\",\n        \"discountPercentage\": 20,\n        \"validUntil\": \"2025-12-31T23:59:59.999Z\",\n        \"status\": \"Active\",\n        \"_id\": \"67a1190d7257dd5142e5e37e\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get coupon ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"coupon",
+								"67a1190d7257dd5142e5e37e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"coupon",
+										"67a1190d7257dd5142e5e37e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-9CTnz3rBSycwinNtmeEZyrZmgoo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:34:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Coupon retrieved successfully\",\n    \"data\": {\n        \"_id\": \"67a1190d7257dd5142e5e37e\",\n        \"code\": \"YL7BNW8Y\",\n        \"discountPercentage\": 20,\n        \"validUntil\": \"2025-12-31T23:59:59.999Z\",\n        \"status\": \"Active\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update coupon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"status\": \"Expired\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"coupon",
+								"67a1190d7257dd5142e5e37e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: true",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"status\": \"Expired\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"coupon",
+										"67a1190d7257dd5142e5e37e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-BJ0NoIYxlPjwaD1pE9+AQzb8DNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:37:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Coupon updated successfully\",\n    \"data\": {\n        \"_id\": \"67a1190d7257dd5142e5e37e\",\n        \"code\": \"YL7BNW8Y\",\n        \"discountPercentage\": 20,\n        \"validUntil\": \"2025-12-31T23:59:59.999Z\",\n        \"status\": \"Expired\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"coupon",
+								"67a1190d7257dd5142e5e37e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess: true",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/coupon/67a1190d7257dd5142e5e37e",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"coupon",
+										"67a1190d7257dd5142e5e37e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-IV6hYPnUkMt8ASfS/hP9NiGtZmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:38:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Coupon deleted successfully\",\n    \"data\": {\n        \"_id\": \"67a1190d7257dd5142e5e37e\",\n        \"code\": \"YL7BNW8Y\",\n        \"discountPercentage\": 20,\n        \"validUntil\": \"2025-12-31T23:59:59.999Z\",\n        \"status\": \"Expired\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "create payment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 500,\r\n    \"status\": \"Success\",\r\n    \"transactionId\": \"TXN123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/payment/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"payment",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 500,\r\n    \"status\": \"Success\",\r\n    \"transactionId\": \"TXN123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/payment/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"payment",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "710"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-KSzDz6edWD1I+wDD3uIDZw69Z+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:41:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Payment created successfully\",\n    \"data\": {\n        \"userId\": \"67a1137b677a44090a4bc5eb\",\n        \"amount\": 500,\n        \"status\": \"Success\",\n        \"transactionId\": \"TXN123456789\",\n        \"_id\": \"67a11bf4611a659c506a79f3\",\n        \"paymentDate\": \"2025-02-03T19:41:40.014Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get payment for a user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/v1/api/payment/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"api",
+								"payment",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success: true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:4000/v1/api/payment/",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"v1",
+										"api",
+										"payment",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "100;w=900"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "900"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-NmnSu2GMFX8kbEmgHbITng16U04\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:42:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"67a11bf4611a659c506a79f3\",\n            \"userId\": \"67a1137b677a44090a4bc5eb\",\n            \"amount\": 500,\n            \"status\": \"Success\",\n            \"transactionId\": \"TXN123456789\",\n            \"paymentDate\": \"2025-02-03T19:41:40.014Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

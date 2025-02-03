@@ -1,16 +1,17 @@
 import CouponService from "../services/couponService.js";
-import  handleError  from "../utils/errorHandler.js"; // Assuming a global error handler
+import  next  from "../utils/errorHandler.js"; // Assuming a global error handler
 
 class CouponController {
   // Create a new coupon
-  async create(req, res) {
-    const { discount, validUntil, isExpired } = req.body;
+  async create(req, res, next) {
+    const { discount, validUntil, isExpired, discountPercentage } = req.body;
 
     try {
       const newCoupon = await CouponService.createCoupon({
         discount,
         validUntil,
         isExpired,
+        discountPercentage,
       });
       return res.status(201).json({
         success: true,
@@ -18,7 +19,7 @@ class CouponController {
         data: newCoupon,
       });
     } catch (error) {
-      handleError(res, error);
+      next(error);
     }
   }
 
@@ -33,13 +34,13 @@ class CouponController {
         data: coupon,
       });
     } catch (error) {
-      handleError(res, error);
+      next(res, error);
     }
   }
 
   // Get coupon by ID
-  async getCoupon(req, res) {
-    const { couponId } = req.params;
+  async getCoupon(req, res, next) {
+    const  couponId  = req.params.couponId;
 
     try {
       const coupon = await CouponService.getCouponById(couponId);
@@ -49,13 +50,13 @@ class CouponController {
         data: coupon,
       });
     } catch (error) {
-      handleError(res, error);
+      next(error);
     }
   }
 
   // Update coupon
-  async update(req, res) {
-    const { couponId } = req.params;
+  async update(req, res, next) {
+    const  couponId  = req.params.couponId;
     const data = req.body;
 
     try {
@@ -66,13 +67,13 @@ class CouponController {
         data: updatedCoupon,
       });
     } catch (error) {
-      handleError(res, error);
+      next(error);
     }
   }
 
   // Delete coupon
-  async delete(req, res) {
-    const { couponId } = req.params;
+  async delete(req, res, next) {
+    const  couponId  = req.params.couponId;
 
     try {
       const deletedCoupon = await CouponService.deleteCoupon(couponId);
@@ -82,7 +83,7 @@ class CouponController {
         data: deletedCoupon,
       });
     } catch (error) {
-      handleError(res, error);
+      next(error);
     }
   }
 }

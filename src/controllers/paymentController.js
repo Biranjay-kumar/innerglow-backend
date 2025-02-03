@@ -23,7 +23,7 @@ class PaymentController {
   // Get all payments for a user
   async getPaymentsByUser(req, res, next) {
     try {
-      const { userId } = req.params; 
+      const  userId  = req.userId; 
       const payments = await UserService.getUserPayments(userId);
 
       if (!payments || payments.length === 0) {

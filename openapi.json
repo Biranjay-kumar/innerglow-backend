@@ -1,0 +1,2095 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "InnerGlow",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost://"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Batch"
+    },
+    {
+      "name": "Coupon"
+    },
+    {
+      "name": "Payment"
+    }
+  ],
+  "paths": {
+    "/000/v1/api/user/verify-otp": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Verified-otp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                  "otp": "192487"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "96"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "720"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "55"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"37-qnY/LUOjBteYYtNyim+IK+DkqMw\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:08:31 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "User verified successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/user/": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Biranjay Kumar Gupta",
+                  "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                  "dob": "07/08/2002",
+                  "password": "123456"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "479"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1df-w1wIGY4meYfW/zcsby+CuDCbDNw\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:05:35 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Welcome to our platform",
+                  "data": {
+                    "success": true,
+                    "data": {
+                      "name": "Biranjay Kumar Gupta",
+                      "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                      "password": "$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6",
+                      "dob": "Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)",
+                      "isVerified": false,
+                      "paymentStatus": "Pending",
+                      "paymentHistory": [],
+                      "otp": "192487",
+                      "enrollmentMonth": 0,
+                      "_id": "67a1137b677a44090a4bc5eb",
+                      "dateJoined": "2025-02-03T19:05:31.046Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Biranjay"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "98"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "876"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "476"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1dc-aNZLB+wyYjnU5xvhEnHrY0R/+zk\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:45:51 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "User updated successfully",
+                  "data": {
+                    "_id": "67a1137b677a44090a4bc5eb",
+                    "name": "Biranjay",
+                    "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                    "password": "$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6",
+                    "dob": "Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)",
+                    "isVerified": true,
+                    "paymentStatus": "Paid",
+                    "paymentHistory": [],
+                    "otp": "192487",
+                    "enrollmentMonth": 1,
+                    "dateJoined": "2025-02-03T19:05:31.046Z",
+                    "__v": 0,
+                    "batch": "67a11658677a44090a4bc5f3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete User",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "66"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"42-Orl5v+hQ8Gj+F6mZBO1mO9s+1jg\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:47:36 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "User deleted successfully",
+                  "data": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                  "password": "123456"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "95"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "659"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "658"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"292-gXrtaqjI5EZb+o09RIJRGB+CRRo\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:09:32 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Login successful",
+                  "data": {
+                    "success": true,
+                    "data": {
+                      "_id": "67a1137b677a44090a4bc5eb",
+                      "name": "Biranjay Kumar Gupta",
+                      "email": "biranjay.21ug1037@iiitranchi.ac.in",
+                      "password": "$2a$10$/cruqBElQ7rJem/2RsBJNuBXCupn7OmyY8TLzBTiyH5eJv9jgOa/6",
+                      "dob": "Wed Aug 07 2002 00:00:00 GMT+0530 (India Standard Time)",
+                      "isVerified": true,
+                      "paymentStatus": "Pending",
+                      "paymentHistory": [],
+                      "otp": "192487",
+                      "enrollmentMonth": 0,
+                      "dateJoined": "2025-02-03T19:05:31.046Z",
+                      "__v": 0
+                    }
+                  },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/batch/": {
+      "post": {
+        "tags": [
+          "Batch"
+        ],
+        "summary": "Create Batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "6-7AM",
+                  "availableSlots": 30,
+                  "users": []
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "94"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "166"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "151"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"97-ifXPo8Z0AtLfPMMDd93C8lQsroo\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:17:45 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Batch created successfully",
+                  "data": {
+                    "name": "6-7AM",
+                    "availableSlots": 30,
+                    "users": [],
+                    "_id": "67a11658677a44090a4bc5f3",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Batch"
+        ],
+        "summary": "Get all batches",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "90"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "67"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "423"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1a7-WXINa7bpNDthL1YH8NW+XwLmVQQ\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:19:24 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Batches retrieved successfully",
+                  "data": [
+                    {
+                      "_id": "67a11658677a44090a4bc5f3",
+                      "name": "6-7AM",
+                      "availableSlots": 30,
+                      "users": [],
+                      "__v": 0
+                    },
+                    {
+                      "_id": "67a11694677a44090a4bc5f5",
+                      "name": "7-8AM",
+                      "availableSlots": 30,
+                      "users": [],
+                      "__v": 0
+                    },
+                    {
+                      "_id": "67a1169f677a44090a4bc5f7",
+                      "name": "8-9AM",
+                      "availableSlots": 12,
+                      "users": [],
+                      "__v": 0
+                    },
+                    {
+                      "_id": "67a116a7677a44090a4bc5f9",
+                      "name": "5-6PM",
+                      "availableSlots": 4,
+                      "users": [],
+                      "__v": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/batch/67a11658677a44090a4bc5f3": {
+      "patch": {
+        "tags": [
+          "Batch"
+        ],
+        "summary": "Update batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": ""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "151"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"97-7C6RcqmMh1u6tpRV/1oM6wi+o9M\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:21:30 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Batch updated successfully",
+                  "data": {
+                    "_id": "67a11658677a44090a4bc5f3",
+                    "name": "6-7AM",
+                    "availableSlots": 30,
+                    "users": [],
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Batch"
+        ],
+        "summary": "Enroll in a batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": ""
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "98"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "864"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "172"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"ac-JCjAGgURShw+VqVXPzIgEjqUX5M\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:22:07 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Enrollment successful",
+                  "data": {
+                    "_id": "67a11658677a44090a4bc5f3",
+                    "name": "6-7AM",
+                    "availableSlots": 29,
+                    "users": [
+                      "67a1137b677a44090a4bc5eb"
+                    ],
+                    "__v": 1
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "96"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "801"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "218"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"da-eirWW14/73P7RBOUHf4Pv9KEYXQ\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:23:09 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": false,
+                  "message": "Student is already enrolled in this batch for the current month",
+                  "error": "Service Error: Error enrolling in batch: Student is already enrolled in this batch for the current month",
+                  "data": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/coupon/": {
+      "post": {
+        "tags": [
+          "Coupon"
+        ],
+        "summary": "Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "discountPercentage": 20,
+                  "validUntil": "2025-12-31T23:59:59.999Z",
+                  "status": "Active"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "98"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "866"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "206"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"ce-pVShbxjFZ6+puR/FRUtwLPUBvag\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:29:17 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Coupon created successfully",
+                  "data": {
+                    "code": "YL7BNW8Y",
+                    "discountPercentage": 20,
+                    "validUntil": "2025-12-31T23:59:59.999Z",
+                    "status": "Active",
+                    "_id": "67a1190d7257dd5142e5e37e",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/coupon/67a1190d7257dd5142e5e37e": {
+      "get": {
+        "tags": [
+          "Coupon"
+        ],
+        "summary": "Get coupon ",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "208"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"d0-9CTnz3rBSycwinNtmeEZyrZmgoo\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:34:57 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Coupon retrieved successfully",
+                  "data": {
+                    "_id": "67a1190d7257dd5142e5e37e",
+                    "code": "YL7BNW8Y",
+                    "discountPercentage": 20,
+                    "validUntil": "2025-12-31T23:59:59.999Z",
+                    "status": "Active",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Coupon"
+        ],
+        "summary": "Update coupon",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "status": "Expired"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "207"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"cf-BJ0NoIYxlPjwaD1pE9+AQzb8DNw\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:37:35 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Coupon updated successfully",
+                  "data": {
+                    "_id": "67a1190d7257dd5142e5e37e",
+                    "code": "YL7BNW8Y",
+                    "discountPercentage": 20,
+                    "validUntil": "2025-12-31T23:59:59.999Z",
+                    "status": "Expired",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Coupon"
+        ],
+        "summary": "Delete",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "207"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"cf-IV6hYPnUkMt8ASfS/hP9NiGtZmI\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:38:29 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Coupon deleted successfully",
+                  "data": {
+                    "_id": "67a1190d7257dd5142e5e37e",
+                    "code": "YL7BNW8Y",
+                    "discountPercentage": 20,
+                    "validUntil": "2025-12-31T23:59:59.999Z",
+                    "status": "Expired",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/000/v1/api/payment/": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "summary": "create payment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "amount": 500,
+                  "status": "Success",
+                  "transactionId": "TXN123456789"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "98"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "710"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "247"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"f7-KSzDz6edWD1I+wDD3uIDZw69Z+E\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:41:40 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "message": "Payment created successfully",
+                  "data": {
+                    "userId": "67a1137b677a44090a4bc5eb",
+                    "amount": 500,
+                    "status": "Success",
+                    "transactionId": "TXN123456789",
+                    "_id": "67a11bf4611a659c506a79f3",
+                    "paymentDate": "2025-02-03T19:41:40.014Z",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Get payment for a user",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2ExMTM3YjY3N2E0NDA5MGE0YmM1ZWIiLCJpYXQiOjE3Mzg2MDk3NzIsImV4cCI6MTczODYxMzM3Mn0.sc_SJaNaZepJnvLNmugPI4Lbkpb0PbIsAyrVVaUywrI"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Origin"
+                }
+              },
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              },
+              "RateLimit-Policy": {
+                "schema": {
+                  "type": "string",
+                  "example": "100;w=900"
+                }
+              },
+              "RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "100"
+                }
+              },
+              "RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "99"
+                }
+              },
+              "RateLimit-Reset": {
+                "schema": {
+                  "type": "integer",
+                  "example": "900"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "208"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"d0-NmnSu2GMFX8kbEmgHbITng16U04\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Feb 2025 19:42:58 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "data": [
+                    {
+                      "_id": "67a11bf4611a659c506a79f3",
+                      "userId": "67a1137b677a44090a4bc5eb",
+                      "amount": 500,
+                      "status": "Success",
+                      "transactionId": "TXN123456789",
+                      "paymentDate": "2025-02-03T19:41:40.014Z",
+                      "__v": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
